@@ -1,14 +1,6 @@
 const puppeteer = require("puppeteer");
 const workflow = require("./workflow");
 
-const args = {
-  url: "http://129.80.201.13:5021",
-  user: "sanju",
-  password: "sanju123",
-  project: "<project_name>",
-  headless: true,
-};
-
 const actionTextMapping = {
   actionOption11: "Ready for Review",
   actionOption21: "Approve Content",
@@ -25,7 +17,7 @@ const actionNeedsWait = ["actionOption31", "actionOption71"];
  * START PUPPETEER SCRIPT
  * ***********************
  */
-(async (args) => {
+const start = async (args) => {
   // get and validate command arguments
   // validate(args);
 
@@ -60,8 +52,7 @@ const actionNeedsWait = ["actionOption31", "actionOption71"];
     if (!result) {
       throw `❌ The project "${project}" doesn't exist in the list of Active projects. It may have already been deployed.`;
     }
-
-    console.log("🚀 Starting deployment. \n|");
+    console.log(`🚀 Starting deployment of project ${project}. \n|`);
 
     // if project found, navigate to project workflow page
     await workflow.openProject(page);
@@ -100,4 +91,6 @@ const actionNeedsWait = ["actionOption31", "actionOption71"];
     // close browser
     await browser.close();
   }
-})(args);
+};
+
+module.exports = { start };

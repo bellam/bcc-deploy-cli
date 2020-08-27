@@ -2,10 +2,13 @@
   "name": "bcc-deploy-cli",
   "version": "1.0.0",
   "description": "Command line interface to deploy Oracle ATG BCC project with NodeJS and Puppeteer.",
-  "main": "index.js",
+  "main": "src/index.js",
+  "bin": {
+    "bcc-deploy": "./bin/bcc-deploy"
+  },
   "scripts": {
-    "start": "node index.js",
-    "test": "jest"
+    "start": "node bin/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,8 @@
   },
   "homepage": "https://github.com/bellam/bcc-deploy-cli#readme",
   "dependencies": {
-    "puppeteer": "^5.2.1"
+    "esm": "^3.2.25",
+    "puppeteer": "^5.2.1",
+    "yargs": "^15.4.1"
   }
 }
