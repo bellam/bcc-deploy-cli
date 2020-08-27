@@ -21,5 +21,25 @@ Run _bcc-deploy_ to deploy BCC project.
 
 `$ bcc-deploy --prj "project name" --url "http://127.0.0.1:8081"`
 
+## Arguments
+```
+Usage: -project <project_name> -url <bcc_url>
+
+Options:
+  --help            Show help                                          [boolean]
+  --version         Show version number                                [boolean]
+  --prj, --project  Project name                             [string] [required]
+  --url             BCC URL endpoint. eg: http://x.x.x.x:xxxx.
+                    Optionally, set environment variable BCC_URL
+                                                             [string] [required]
+  -u, --user        BCC username.
+                    Optionally, set environment variable BCC_USERNAME
+                    (Recommended).                          [string] [required]
+  -p, --pass        BCC Password.
+                    Optionally, set environment variable BCC_PASSWORD
+                    (Recommended).                          [string] [required]
+  --headless        Open browser process in background and hide browser window.
+                                                       [boolean] [default: true
+```
 
 ![bcc-deploy](https://user-images.githubusercontent.com/1712809/91489128-eec44000-e8cd-11ea-968a-cef9cc81677a.png)
