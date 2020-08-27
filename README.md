@@ -20,3 +20,6 @@ To deploy project, set ATG BCC username in environment variable `BCC_USERNAME` a
 Run _bcc-deploy_ to deploy BCC project.
 
 `$ bcc-deploy --prj "project name" --url "http://127.0.0.1:8081"`
+
+
+![bcc-deploy](https://user-images.githubusercontent.com/1712809/91489128-eec44000-e8cd-11ea-968a-cef9cc81677a.png)
