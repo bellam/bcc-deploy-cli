@@ -15,9 +15,6 @@
     "type": "git",
     "url": "git+ssh://git@github.com/bellam/bcc-deploy-cli.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [
     "Oracle Commerce",
     "ATG",
