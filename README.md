@@ -2,26 +2,24 @@
 
 Command line interface to deploy Oracle ATG BCC projects with NodeJS and Puppeteer.
 
-- Tested with Oracle Commerce 11.2.
+- Tested on Oracle Commerce 11.2.
 
 ## Installation
 
-To install, run
-`npm install`
+`npm install @bellam/bcc-deploy-cli`
 
-To use cli, from project directory, run
-
-`npm link`
+This command installs puppeteer's chromium browser as part of the package.
 
 ## Command line interface
 
-To deploy project, set ATG BCC username in environment variable `BCC_USERNAME` and ATG BCC password in environment variable `BCC_PASSWORD`
+Set ATG BCC login credentials in environment variables. Set ATG BCC username in environment variable `BCC_USERNAME` and ATG BCC password in environment variable `BCC_PASSWORD`
 
-Run _bcc-deploy_ to deploy BCC project.
+To deploy a project, run _bcc-deploy_ command with required arguments.
 
 `$ bcc-deploy --prj "project name" --url "http://127.0.0.1:8081"`
 
 ## Arguments
+
 ```
 Usage: -project <project_name> -url <bcc_url>
 
@@ -42,4 +40,4 @@ Options:
                                                        [boolean] [default: true
 ```
 
-![bcc-deploy](https://user-images.githubusercontent.com/1712809/91489128-eec44000-e8cd-11ea-968a-cef9cc81677a.png)
+![bcc-deploy](https://user-images.githubusercontent.com/1712809/91556676-bca7f200-e950-11ea-89ab-5c6062cdca46.png)
