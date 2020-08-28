@@ -24,6 +24,9 @@
     "project",
     "deployment"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "bellam",
   "license": "MIT",
   "bugs": {
