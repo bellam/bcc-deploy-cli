@@ -1,6 +1,6 @@
 {
   "name": "@bellam/bcc-deploy-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Command line interface to deploy Oracle ATG BCC project with NodeJS and Puppeteer.",
   "main": "src/index.js",
   "bin": {
@@ -14,6 +14,9 @@
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/bellam/bcc-deploy-cli.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "Oracle Commerce",

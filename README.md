@@ -41,3 +41,8 @@ Options:
 ```
 
 ![bcc-deploy](https://user-images.githubusercontent.com/1712809/91556676-bca7f200-e950-11ea-89ab-5c6062cdca46.png)
+
+## Versions
+
+1.0.1 - npm registry docs update
+1.0.0 - Initial Commit
