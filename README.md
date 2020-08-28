@@ -8,7 +8,7 @@ Command line interface to deploy Oracle ATG BCC projects with NodeJS and Puppete
 
 `npm install -g @bellam/bcc-deploy-cli`
 
-This command installs puppeteer's chromium browser as part of the package.
+This command installs puppeteer's local chromium browser as part of the package.
 
 ## Command line interface
 
