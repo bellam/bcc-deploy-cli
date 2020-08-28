@@ -2,6 +2,8 @@
 
 Command line interface to deploy Oracle ATG BCC projects with NodeJS and Puppeteer.
 
+[![Build Status](https://travis-ci.org/bellam/bcc-deploy-cli.svg?branch=master)](https://travis-ci.org/bellam/bcc-deploy-cli)
+
 - Tested on Oracle Commerce 11.2.
 
 ## Installation
