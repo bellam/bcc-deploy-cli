@@ -35,12 +35,12 @@ Options:
                                                              [string] [required]
   -u, --user        BCC username.
                     Optionally, set environment variable BCC_USERNAME
-                    (Recommended).                          [string] [required]
+                    (Recommended).                           [string] [required]
   -p, --pass        BCC Password.
                     Optionally, set environment variable BCC_PASSWORD
-                    (Recommended).                          [string] [required]
+                    (Recommended).                           [string] [required]
   --headless        Open browser process in background and hide browser window.
-                                                       [boolean] [default: true
+                                                       [boolean] [default: true]
 ```
 
 ![bcc-deploy](https://user-images.githubusercontent.com/1712809/91556676-bca7f200-e950-11ea-89ab-5c6062cdca46.png)

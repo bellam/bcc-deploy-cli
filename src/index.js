@@ -1,16 +1,6 @@
 const puppeteer = require("puppeteer");
 const workflow = require("./workflow");
-
-const actionTextMapping = {
-  actionOption11: "Ready for Review",
-  actionOption21: "Approve Content",
-  actionOption31: "Approve and Deploy to Staging",
-  actionOption51: "Accept Staging Deployment",
-  actionOption71: "Approve and Deploy to Production",
-  actionOption91: "Accept Production Deployment",
-};
-
-const actionNeedsWait = ["actionOption31", "actionOption71"];
+const config = require("./config");
 
 /**
  * ***********************
@@ -22,7 +12,8 @@ const start = async (args) => {
   // validate(args);
 
   // get project name
-  const project = args.project;
+  const xform = args.xform;
+  const project = xform ? config.xformFn(args.project) : args.project;
 
   // launch browser
   const browser = await puppeteer.launch({
@@ -58,7 +49,7 @@ const start = async (args) => {
     await workflow.openProject(page);
 
     // start deployment workflow
-    const entries = Object.entries(actionTextMapping);
+    const entries = Object.entries(config.actionTextMapping);
     for (const [index, [key, value]] of Object.entries(entries)) {
       const elem = await page.$("#" + key);
       if (!elem) {
@@ -69,7 +60,7 @@ const start = async (args) => {
       await workflow.setDropDownByText(page, key, value);
       await workflow.confirmWorkflowAction(page);
 
-      if (actionNeedsWait.indexOf(key) > -1) {
+      if (config.actionNeedsWait.indexOf(key) > -1) {
         // wait for deployment to get over and next element to show up
         let nextOp = entries[parseInt(index) + 1];
         if (nextOp) {

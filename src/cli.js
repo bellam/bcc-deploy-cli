@@ -15,6 +15,7 @@ export function cli(args) {
         describe:
           "BCC URL endpoint. eg: http://x.x.x.x:xxxx. \n Optionally, set environment variable BCC_URL",
         type: "string",
+        default: process.env.BCC_URL,
         demandOption: true,
       },
       u: {
@@ -38,6 +39,10 @@ export function cli(args) {
         type: "boolean",
         default: true,
       },
+      xform: {
+        describe: "Optional transform function called on -prj argument",
+        type: "boolean",
+      },
     }).argv;
 
   const argv = {
@@ -46,6 +51,7 @@ export function cli(args) {
     password: options.p,
     project: options.prj,
     headless: options.headless,
+    xform: options.xform,
   };
 
   script.start(argv);
