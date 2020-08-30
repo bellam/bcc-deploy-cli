@@ -11,6 +11,8 @@ const start = async (args) => {
   // get and validate command arguments
   // validate(args);
 
+  console.log("BCC URL: ", args.url);
+
   // get project name
   const xform = args.xform;
   const project = xform ? config.xformFn(args.project) : args.project;
