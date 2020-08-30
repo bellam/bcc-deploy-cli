@@ -24,28 +24,35 @@ To deploy a project, run _bcc-deploy_ command with required arguments.
 ## Arguments
 
 ```
-Usage: -project <project_name> -url <bcc_url>
+Usage: --prj <project_name> --env <environment_name>
 
 Options:
   --help            Show help                                          [boolean]
   --version         Show version number                                [boolean]
   --prj, --project  Project name                             [string] [required]
   --url             BCC URL endpoint. eg: http://x.x.x.x:xxxx.
-                    Optionally, set environment variable BCC_URL
+                    Optionally, set environment variable BCC_URL_<env>
                                                              [string] [required]
+  --env             Environment. eg: uat, prod                          [string]
   -u, --user        BCC username.
-                    Optionally, set environment variable BCC_USERNAME
+                    Optionally, set environment variable BCC_USERNAME_<env>
                     (Recommended).                           [string] [required]
   -p, --pass        BCC Password.
-                    Optionally, set environment variable BCC_PASSWORD
+                    Optionally, set environment variable BCC_PASSWORD_<env>
                     (Recommended).                           [string] [required]
   --headless        Open browser process in background and hide browser window.
                                                        [boolean] [default: true]
+  --xform           Optional transform function called on -prj argument[boolean]
 ```
 
 ![bcc-deploy](https://user-images.githubusercontent.com/1712809/91556676-bca7f200-e950-11ea-89ab-5c6062cdca46.png)
 
 ## Versions
 
+1.1.0 - pass environment as argument to pickup environment-specific URL, Username, Password
+
+1.0.3 - xform argument to transform project name
+
 1.0.1 - npm registry docs update
+
 1.0.0 - Initial Commit

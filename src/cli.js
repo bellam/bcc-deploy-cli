@@ -1,9 +1,10 @@
 const yargs = require("yargs")(process.argv.slice(2));
 const script = require("./index");
+const env = (yargs.argv.env || "test").toUpperCase();
 
 export function cli(args) {
   const options = yargs
-    .usage("Usage: -project <project_name> -url <bcc_url>")
+    .usage("Usage: --prj <project_name> --env <environment_name>")
     .options({
       prj: {
         alias: "project",
@@ -13,25 +14,29 @@ export function cli(args) {
       },
       url: {
         describe:
-          "BCC URL endpoint. eg: http://x.x.x.x:xxxx. \n Optionally, set environment variable BCC_URL",
+          "BCC URL endpoint. eg: http://x.x.x.x:xxxx. \n Optionally, set environment variable BCC_URL_<env>",
         type: "string",
-        default: process.env.BCC_URL,
+        default: process.env[`BCC_URL_${env}`],
         demandOption: true,
+      },
+      env: {
+        describe: "Environment. eg: uat, prod",
+        type: "string",
       },
       u: {
         describe:
-          "BCC username. \nOptionally, set environment variable BCC_USERNAME (Recommended).",
+          "BCC username. \nOptionally, set environment variable BCC_USERNAME_<env> (Recommended).",
         alias: "user",
         type: "string",
-        default: process.env.BCC_USERNAME,
+        default: process.env[`BCC_USERNAME_${env}`],
         demandOption: true,
       },
       p: {
         describe:
-          "BCC Password. \nOptionally, set environment variable BCC_PASSWORD (Recommended).",
+          "BCC Password. \nOptionally, set environment variable BCC_PASSWORD_<env> (Recommended).",
         alias: "pass",
         type: "string",
-        default: process.env.BCC_PASSWORD,
+        default: process.env[`BCC_PASSWORD_${env}`],
         demandOption: true,
       },
       headless: {
