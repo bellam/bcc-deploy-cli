@@ -1,6 +1,6 @@
 const yargs = require("yargs")(process.argv.slice(2));
 const script = require("./index");
-const env = (yargs.argv.env || "test").toUpperCase();
+const env = yargs.argv.env ? ("_" + yargs.argv.env).toUpperCase() : "";
 
 export function cli(args) {
   const options = yargs
@@ -16,7 +16,7 @@ export function cli(args) {
         describe:
           "BCC URL endpoint. eg: http://x.x.x.x:xxxx. \n Optionally, set environment variable BCC_URL_<env>",
         type: "string",
-        default: process.env[`BCC_URL_${env}`],
+        default: process.env[`BCC_URL${env}`],
         demandOption: true,
       },
       env: {
@@ -28,7 +28,7 @@ export function cli(args) {
           "BCC username. \nOptionally, set environment variable BCC_USERNAME_<env> (Recommended).",
         alias: "user",
         type: "string",
-        default: process.env[`BCC_USERNAME_${env}`],
+        default: process.env[`BCC_USERNAME${env}`],
         demandOption: true,
       },
       p: {
@@ -36,7 +36,7 @@ export function cli(args) {
           "BCC Password. \nOptionally, set environment variable BCC_PASSWORD_<env> (Recommended).",
         alias: "pass",
         type: "string",
-        default: process.env[`BCC_PASSWORD_${env}`],
+        default: process.env[`BCC_PASSWORD${env}`],
         demandOption: true,
       },
       headless: {
