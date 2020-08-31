@@ -24,6 +24,22 @@ const login = async (page, user, password) => {
 };
 
 /**
+ * Log out of BCC
+ * @param {*} page - the browser page
+ */
+const logout = async (page) => {
+  console.log("Project deploy. Logging out of BCC.");
+  await page.evaluate(() => {
+    document.querySelector(".logout").click();
+  });
+  await page.waitForNavigation({ timeout: 0, waitUntil: "networkidle0" });
+  await page.evaluate(() => {
+    document.querySelector(".buttonSmall").click();
+  });
+  console.log("Successfully logged out.");
+};
+
+/**
  * ************************************************
  * Search for a project by name
  *
@@ -132,6 +148,7 @@ function refreshPageTillNextStep(page, id, retry) {
 
 module.exports = {
   login,
+  logout,
   search,
   openProject,
   setDropDownByText,

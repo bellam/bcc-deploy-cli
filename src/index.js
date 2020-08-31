@@ -24,10 +24,9 @@ const start = async (args) => {
     defaultViewport: null,
     headless: args.headless,
   });
+  // open a new page
+  const page = await browser.newPage();
   try {
-    // open a new page
-    const page = await browser.newPage();
-
     // navigate to BCC
     await page.goto(`${args.url}/atg/bcc`);
 
@@ -79,10 +78,13 @@ const start = async (args) => {
     console.log("🎉🎉Done!");
   } catch (e) {
     console.error(e);
-    process.exit();
   } finally {
+    // logout
+    await workflow.logout(page);
     // close browser
     await browser.close();
+    // exit process
+    process.exit();
   }
 };
 
