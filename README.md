@@ -49,6 +49,8 @@ Options:
 
 ## Versions
 
+1.1.1 - added logout function post-deployment
+
 1.1.0 - pass environment as argument to pickup environment-specific URL, Username, Password
 
 1.0.3 - xform argument to transform project name
