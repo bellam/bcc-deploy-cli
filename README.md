@@ -28,11 +28,11 @@ Example:
 - if your --env argument is "prod", set `BCC_USERNAME_PROD` and `BCC_PASSWORD_PROD`.
 - If you are not using --env, set `BCC_USERNAME` and `BCC_PASSWORD`.
 
-### Deploying in Production
+### Deploying project without --url
 
 Optionally, you can also set the BCC URL (without trailing slash) in environment variable `BCC_URL_<env>`.
 
-Set up all three variables and run,
+Set up all three variables and run _bcc-deploy_,
 
 `$ bcc-deploy --prj "project name" --env prod`
 
