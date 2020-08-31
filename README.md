@@ -32,7 +32,7 @@ Example:
 
 Optionally, you can also set the BCC URL (without trailing slash) in environment variable `BCC_URL_<env>`.
 
-Set up all three variables and run _bcc-deploy_,
+Set up all three environment variables (username, password, url) and run _bcc-deploy_,
 
 `$ bcc-deploy --prj "project name" --env prod`
 
