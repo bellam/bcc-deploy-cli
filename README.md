@@ -22,13 +22,17 @@ To deploy a project, run _bcc-deploy_ command with required arguments.
 You can pass username and password as arguments but it is recommended to set ATG BCC login credentials in environment variables.
 
 Set ATG BCC username in environment variable `BCC_USERNAME_<env>` and ATG BCC password in environment variable `BCC_PASSWORD_<env>`.
-Example: if your --env argument is "prod", set `BCC_USERNAME_PROD` and `BCC_PASSWORD_PROD`. If you are not using --env, set `BCC_USERNAME` and `BCC_PASSWORD`.
 
-### Deploying without --url argument
+Example:
+
+- if your --env argument is "prod", set `BCC_USERNAME_PROD` and `BCC_PASSWORD_PROD`.
+- If you are not using --env, set `BCC_USERNAME` and `BCC_PASSWORD`.
+
+### Deploying in Production
 
 Optionally, you can also set the BCC URL (without trailing slash) in environment variable `BCC_URL_<env>`.
 
-In this case, you can deploy a project with:
+Set up all three variables and run,
 
 `$ bcc-deploy --prj "project name" --env prod`
 
