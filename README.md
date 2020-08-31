@@ -15,11 +15,21 @@ This command installs puppeteer's local chromium browser as part of the package.
 
 ## Command line interface
 
-Set ATG BCC login credentials in environment variables. Set ATG BCC username in environment variable `BCC_USERNAME` and ATG BCC password in environment variable `BCC_PASSWORD`
+It is recommended to set ATG BCC login credentials in environment variables. Set ATG BCC username in environment variable `BCC_USERNAME_<env>` and ATG BCC password in environment variable `BCC_PASSWORD_<env>`
+
+Example: if your --env argument is "prod", set `BCC_USERNAME_PROD` and `BCC_PASSWORD_PROD`.
 
 To deploy a project, run _bcc-deploy_ command with required arguments.
 
 `$ bcc-deploy --prj "project name" --url "http://127.0.0.1:8081"`
+
+### Deploying without specifying URL
+
+Optionally, you can also set the BCC URL (without trailing slash) in environment variable `BCC_URL_<env>`.
+
+In this case, you can deploy a project with:
+
+`$ bcc-deploy --prj "project name" --env prod`
 
 ## Arguments
 
