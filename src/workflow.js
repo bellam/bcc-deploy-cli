@@ -28,7 +28,7 @@ const login = async (page, user, password) => {
  * @param {*} page - the browser page
  */
 const logout = async (page) => {
-  console.log("Project deploy. Logging out of BCC.");
+  console.log("Logging out of BCC");
   await page.evaluate(() => {
     document.querySelector(".logout").click();
   });
